@@ -36,7 +36,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "hook-std": "^1.1.0",
-    "listr": "*",
+		"listr": "unboundedsystems/listr",
     "strip-ansi": "^5.0.0",
     "xo": "^0.23.0"
   }
