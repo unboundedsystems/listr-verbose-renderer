@@ -27,6 +27,7 @@ const render = (tasks, options) => {
 			event => {
 				if (event.type === 'SUBTASKS') {
 					render(task.subtasks, options);
+					subscribeToListr(event.data, options);
 					return;
 				}
 
@@ -39,12 +40,29 @@ const render = (tasks, options) => {
 	}
 };
 
+const subscribeToListr = (listr, options) => {
+	// Older versions of Listr don't provide the listr instance
+	if (!listr) {
+		return;
+	}
+
+	listr.subscribe(
+		event => {
+			if (event.type === 'ADDTASK') {
+				render([event.data], options);
+			}
+		}
+	);
+};
+
 class VerboseRenderer {
-	constructor(tasks, options) {
+	constructor(tasks, options, listr) {
 		this._tasks = tasks;
 		this._options = Object.assign({
 			dateFormat: 'HH:mm:ss'
 		}, options);
+
+		subscribeToListr(listr, options);
 	}
 
 	static get nonTTY() {
