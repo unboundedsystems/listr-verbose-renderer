@@ -1,9 +1,9 @@
 {
-  "name": "listr-verbose-renderer",
-  "version": "0.5.0-unb1",
+  "name": "@unboundedsystems/listr-verbose-renderer",
+  "version": "0.5.0-unb2",
   "description": "Listr verbose renderer",
   "license": "MIT",
-  "repository": "SamVerschueren/listr-verbose-renderer",
+  "repository": "unboundedsystems/listr-verbose-renderer",
   "author": {
     "name": "Sam Verschueren",
     "email": "sam.verschueren@gmail.com",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "hook-std": "^1.1.0",
-		"listr": "unboundedsystems/listr",
+    "listr": "@unboundedsystems/listr",
     "strip-ansi": "^5.0.0",
     "xo": "^0.23.0"
   }
